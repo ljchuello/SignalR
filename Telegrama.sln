@@ -5,10 +5,6 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegrama.Server", "Telegrama\Server\Telegrama.Server.csproj", "{7821875E-EE3C-462B-B6A7-3C3C2F7D7EC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegrama.Client", "Telegrama\Client\Telegrama.Client.csproj", "{273AD188-A6D6-4235-88DB-702A079EE0F8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegrama.Shared", "Telegrama\Shared\Telegrama.Shared.csproj", "{8980F4D7-1F27-4D16-BE7D-6BA16AE7878C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{7821875E-EE3C-462B-B6A7-3C3C2F7D7EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7821875E-EE3C-462B-B6A7-3C3C2F7D7EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7821875E-EE3C-462B-B6A7-3C3C2F7D7EC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{273AD188-A6D6-4235-88DB-702A079EE0F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{273AD188-A6D6-4235-88DB-702A079EE0F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{273AD188-A6D6-4235-88DB-702A079EE0F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{273AD188-A6D6-4235-88DB-702A079EE0F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8980F4D7-1F27-4D16-BE7D-6BA16AE7878C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8980F4D7-1F27-4D16-BE7D-6BA16AE7878C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8980F4D7-1F27-4D16-BE7D-6BA16AE7878C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8980F4D7-1F27-4D16-BE7D-6BA16AE7878C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

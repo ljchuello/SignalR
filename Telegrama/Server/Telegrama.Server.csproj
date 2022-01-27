@@ -10,10 +10,5 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Client\Telegrama.Client.csproj" />
-    <ProjectReference Include="..\Shared\Telegrama.Shared.csproj" />
-  </ItemGroup>
-
 
 </Project>
