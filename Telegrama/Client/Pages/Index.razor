@@ -1,9 +1,57 @@
 ﻿@page "/"
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager navigationManager
+@implements IDisposable
 
-<PageTitle>Index</PageTitle>
+<div class="form-group">
+    <label>Usuario:</label>
+    <input @bind="Usuario" />
+</div>
 
-<h1>Hello, world!</h1>
+<div class="form-group">
+    <label>Mensaje:</label>
+    <input @bind="Mensaje" />
+</div>
 
-Welcome to your new app.
+<label>Se ha recibido: @recibido</label>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<button @onclick="Enviar" disabled="@(!isConnected)">
+    Enviar
+</button>
+
+@code
+{
+    string Usuario = string.Empty;
+    string Mensaje = string.Empty;
+
+    string recibido = string.Empty;
+
+    HubConnection hubConnection;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(navigationManager.ToAbsoluteUri("/chathub"))
+            .Build();
+
+        hubConnection.On<string, string>("ReceiveMessage", (x, y) =>
+        {
+            recibido = $"{x} - {y}";
+            StateHasChanged();
+        });
+
+        await hubConnection.StartAsync();
+    }
+
+    async Task Enviar()
+    {
+        await hubConnection.SendAsync("SendMessage", Usuario, Mensaje);
+    }
+
+    public bool isConnected => hubConnection.State == HubConnectionState.Connected;
+
+    public void Dispose()
+    {
+        _ = hubConnection.DisposeAsync();
+    }
+}
